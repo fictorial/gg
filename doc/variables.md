@@ -57,7 +57,7 @@ ${now}
 gg --eq greet 'hello, world'
 
 # id
-GvrbMw6gY
+1
 
 # greet
 hello, world!
