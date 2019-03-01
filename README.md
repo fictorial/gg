@@ -15,6 +15,7 @@ gg isn't postgres/sqlite -- it's a handy tool that you might find useful. Enjoy!
 
 ```sh
 $ npm i -g @fictorial/gg
+$ npx @fictorial/gg
 ```
 
 ```sh
