@@ -1,0 +1,56 @@
+#!/usr/bin/env node
+
+const fs = require('fs')
+const tempy = require('tempy')
+
+if (process.argv[2] === 'add') {
+  let text = (process.argv[3] || '').trim()
+  if (text.length > 0) {
+    if (text === '-') readFromStdin(addRecord)
+    else addRecord(text)
+  } else {
+    if (process.stdin.isTTY) readFromEditor(addRecord)
+    else readFromStdin(addRecord)
+  }
+}
+
+function readFromStdin (cb) {
+  let text = ''
+  process.stdin.setEncoding('utf-8')
+  process.stdin.on('readable', () => {
+    let data = process.stdin.read()
+    if (data !== null) text += data
+    process.stdin.resume()
+  })
+  process.stdin.on('end', () => cb(text))
+}
+
+function readFromEditor (cb) {
+  let editor = process.env.VISUAL || process.env.EDITOR || 'vim'
+  let tempfile = tempy.file()
+  let child = require('child_process').spawn(editor, [tempfile], {stdio: 'inherit'})
+  child.on('error', e => {
+    console.error(e.message)
+    process.exit(1)
+  })
+  child.on('exit', (code, signal) => {
+    if (code === 0) {
+      try {
+        let text = (fs.readFileSync(tempfile, {encoding: 'utf-8'}) || '').trim()
+        if (text.length === 0) process.exit(1)
+        cb(text)
+      } catch (e) {
+        if (e.code === 'ENOENT') process.exit(1)
+        console.error('error', e)
+        process.exit(2)
+      }
+    } else {
+      console.error('editor %s got signal %d', editor, signal)
+      process.exit(signal)
+    }
+  })
+}
+
+function addRecord (text) {
+  console.log('addRecord', text)
+}

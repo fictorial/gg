@@ -1,0 +1,20 @@
+{
+  "name": "gg",
+  "version": "1.0.0",
+  "description": "gg is a generic manager of generic data records.",
+  "main": "index.js",
+  "keywords": [],
+  "author": "Brian Hammond <brian@fictorial.com>",
+  "license": "None",
+  "scripts": {
+    "test": "ava"
+  },
+  "dependencies": {
+    "debug": "^4.1.1",
+    "moment": "^2.24.0",
+    "tempy": "^0.2.1"
+  },
+  "devDependencies": {
+    "ava": "^1.2.1"
+  }
+}
