@@ -3,7 +3,7 @@ import moment from 'moment'
 import {
   parseMarkdown as parse,
   getValueForKeyPath
-} from './markdown-parser'
+} from '../lib/markdown-parser'
 
 test('parse header level 1', t => {
   t.deepEqual(parse('# A'), [
