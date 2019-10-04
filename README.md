@@ -1,15 +1,18 @@
 # gg
 
-gg is a CLI to import, query, act on, and report on local Markdown files with
-support for user-defined JavaScript extensions.
+gg is a CLI to import, query, act on, and report on local Markdown
+files with support for user-defined JavaScript extensions.
 
-gg is *generic* and can become whatever you want it to become: a task manager,
-a journal, storage for notes about anything, code snippet manager, bookmark
-manager, recipe manager, grocery list manager, and so on.
+gg is *generic* and can become whatever you want it to become: a
+task manager, a journal, storage for notes about anything, code
+snippet manager, bookmark manager, recipe manager, grocery list
+manager, and so on.
 
-Why Markdown?  It's human readable, easy to learn, and is not some custom binary database format.
+Why Markdown?  It's human readable, easy to learn, and is not a
+proprietary database format.
 
-gg isn't postgres/sqlite -- it's a handy tool that you might find useful. Enjoy!
+gg isn't postgres/sqlite -- it's a handy tool that you might find
+useful. Enjoy!
 
 ## Quickstart
 
@@ -64,10 +67,12 @@ Do the dishes
 
 ## Markdown
 
-gg supports a subset of Markdown for parsing: headers and un-nested bullet
-lists.  That's all that's really needed for queries, actions, variable
-expanders, and validators.  If you wish to use more Markdown features for say
-generating HTML from the matches to a query, or results of an action, by all
-means go right ahead.  But for gg, Markdown is used as human-readable storage
-format which is kind of handy (c.f. JSON, YAML, TOML).
+gg supports a subset of Markdown for parsing: headers, paragraphs
+(the "type-inferred values"), and un-nested bullet lists of type-
+inferred values.  That's all that's really needed for queries,
+actions, variable expanders, and validators.  If you wish to use
+more Markdown features for say generating HTML from the matches to a
+query, or results of an action, by all means go right ahead.  But
+for gg, Markdown is used as human-readable storage format which is
+kind of handy (c.f. JSON, YAML, TOML).
 
