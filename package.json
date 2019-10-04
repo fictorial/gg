@@ -1,6 +1,6 @@
 {
-  "name": "gg",
-  "version": "1.0.1",
+  "name": "@fictorial/gg",
+  "version": "1.0.2",
   "description": "gg is a generic manager of generic data records.",
   "main": "index.js",
   "keywords": ["database","cli","journal","to-do","markdown"],
@@ -8,6 +8,9 @@
   "license": "MIT",
   "scripts": {
     "test": "ava"
+  },
+  "bin": {
+    "gg": "gg"
   },
   "dependencies": {
     "debug": "^4.1.1",
