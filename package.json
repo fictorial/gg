@@ -1,11 +1,11 @@
 {
   "name": "gg",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "gg is a generic manager of generic data records.",
   "main": "index.js",
-  "keywords": [],
+  "keywords": ["database","cli","journal","to-do","markdown"],
   "author": "Brian Hammond <brian@fictorial.com>",
-  "license": "None",
+  "license": "MIT",
   "scripts": {
     "test": "ava"
   },
